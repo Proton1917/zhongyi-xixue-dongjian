@@ -306,69 +306,89 @@
       .thesis-panel {
         position: relative;
         display: grid;
-        grid-template-columns: 1.05fr 0.95fr;
-        gap: clamp(24px, 5vw, 56px);
-        align-items: stretch;
-        padding: clamp(28px, 4vw, 52px);
+        grid-template-columns: 0.92fr 1.08fr;
+        gap: clamp(24px, 5vw, 62px);
+        align-items: start;
+        padding: clamp(30px, 5vw, 58px);
         border: 1px solid rgba(95, 8, 8, 0.18);
+        border-top: 7px solid var(--red-800);
         background:
-          linear-gradient(135deg, rgba(255, 250, 240, 0.9), rgba(245, 235, 220, 0.78)),
+          linear-gradient(90deg, rgba(95, 8, 8, 0.035) 1px, transparent 1px) 0 0 / 18px 18px,
+          linear-gradient(180deg, rgba(255, 250, 240, 0.92), rgba(245, 235, 220, 0.84)),
           var(--paper);
-        box-shadow: var(--shadow);
+        box-shadow: 0 22px 52px rgba(47, 20, 13, 0.13);
       }
 
       .thesis-panel::before {
         position: absolute;
-        top: -13px;
-        left: clamp(28px, 5vw, 68px);
-        width: 180px;
-        height: 26px;
-        content: "";
-        background: rgba(201, 149, 61, 0.36);
-        transform: rotate(-2deg);
+        top: 26px;
+        right: clamp(24px, 4vw, 46px);
+        content: "案卷";
+        width: 72px;
+        height: 72px;
+        display: grid;
+        place-items: center;
+        border: 3px double rgba(173, 31, 31, 0.48);
+        border-radius: 50%;
+        color: rgba(173, 31, 31, 0.52);
+        font-family: var(--kai);
+        font-size: 25px;
+        font-weight: 900;
+        transform: rotate(-12deg);
+      }
+
+      .thesis-document {
+        max-width: 620px;
       }
 
       .big-claim {
         margin: 0;
         color: var(--red-900);
-        font-size: clamp(27px, 3.4vw, 47px);
+        font-size: clamp(28px, 3.8vw, 52px);
         font-weight: 900;
-        line-height: 1.24;
+        line-height: 1.18;
+        text-wrap: balance;
       }
 
       .claim-copy {
-        margin: 22px 0 0;
+        margin: 24px 0 0;
+        padding-top: 18px;
+        border-top: 1px solid rgba(95, 8, 8, 0.18);
         color: var(--ink-soft);
         font-size: 18px;
-        line-height: 1.9;
+        line-height: 1.88;
       }
 
       .question-list {
         display: grid;
-        gap: 14px;
+        gap: 0;
         margin: 0;
         padding: 0;
+        border-top: 1px solid rgba(95, 8, 8, 0.18);
         list-style: none;
       }
 
       .question-list li {
-        padding: 18px 18px 18px 22px;
-        border-left: 6px solid var(--red-700);
-        background: rgba(255, 250, 240, 0.72);
+        display: grid;
+        grid-template-columns: 118px 1fr;
+        gap: 18px;
+        padding: 20px 0;
+        border-bottom: 1px solid rgba(95, 8, 8, 0.18);
       }
 
       .question-list strong {
         display: block;
         color: var(--red-900);
         font-family: var(--hei);
-        font-size: 14px;
-        margin-bottom: 6px;
+        font-size: 13px;
+        font-weight: 900;
+        line-height: 1.5;
       }
 
       .question-list span {
         color: var(--ink-soft);
-        font-size: 17px;
-        line-height: 1.7;
+        font-size: 18px;
+        line-height: 1.8;
       }
 
       .timeline {
@@ -1101,6 +1121,15 @@
           transform: none;
         }
 
+        .thesis-panel::before {
+          opacity: 0.22;
+        }
+
+        .question-list li {
+          grid-template-columns: 1fr;
+          gap: 8px;
+        }
+
         .modal-panel {
           max-height: calc(100vh - 32px);
         }
@@ -1135,27 +1164,27 @@
     <main>
       <section id="thesis" class="thesis">
         <div class="section-inner thesis-panel reveal">
-          <div>
-            <p class="section-kicker">核心判断</p>
+          <div class="thesis-document">
+            <p class="section-kicker">导言</p>
             <p class="big-claim">
-              西医进入后，中医没有消失，但也无法原样延续，必须面对科学话语、职业规范和国家医政。
+              西医传入以后，问题不只是中医还能不能看病，而是谁有资格定义“医学”。
             </p>
             <p class="claim-copy">
-              本页不判优劣，只看中医如何进入学校、报刊、制度，如何与民族危机产生关联。
+              所以这页不急着判断中医和西医谁更先进。我们把它放回晚清到民国的现场：医院、译书、报刊、学会和法规一起出现，中医也在这些压力里寻找新的说法和位置。
             </p>
           </div>
-          <ul class="question-list" aria-label="展示问题">
+          <ul class="question-list" aria-label="史料线索">
             <li>
-              <strong>为什么被冲击</strong>
-              <span>传教医院、解剖学、公共卫生和学校教育建立了新的医疗权威。</span>
+              <strong>先看西医怎样进来</strong>
+              <span>传教医院、西医译书和解剖图像进入中国后，人们开始用另一套名词和图像理解身体。</span>
             </li>
             <li>
-              <strong>如何回应冲击</strong>
-              <span>中医界通过中西汇通、重释经典、办学结社、报刊论战和请愿来回应。</span>
+              <strong>再看中医怎么回应</strong>
+              <span>中医界并不是沉默接受冲击，而是办学、结社、办刊、论战，试着说明自己的价值。</span>
             </li>
             <li>
-              <strong>留下什么问题</strong>
-              <span>传统医术如何进入现代制度，经验如何接受科学检验，成为遗留问题。</span>
+              <strong>最后看制度怎样改变</strong>
+              <span>到了民国，学校、考试、执照和卫生行政越来越重要，中医必须争取进入这套新制度。</span>
             </li>
           </ul>
         </div>
