@@ -1,0 +1,1320 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="近代西学东渐下的中医转型主题展示页面，梳理冲击、回应、制度化与现代转向。"
+    />
+    <title>近代西学东渐下的中医转型</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23861313'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-size='34' fill='%23fffaf0' font-family='serif'%3E医%3C/text%3E%3C/svg%3E"
+    />
+    <style>
+      :root {
+        --red-900: #5f0808;
+        --red-800: #861313;
+        --red-700: #ad1f1f;
+        --red-600: #c7352a;
+        --gold: #c9953d;
+        --ink: #231815;
+        --ink-soft: #4f3c35;
+        --paper: #f5ebdc;
+        --paper-deep: #e9d7bd;
+        --porcelain: #fffaf0;
+        --jade: #294d42;
+        --line: rgba(95, 8, 8, 0.2);
+        --shadow: 0 24px 60px rgba(47, 20, 13, 0.16);
+        --song: "Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", "STSong",
+          serif;
+        --kai: "Kaiti SC", "STKaiti", "LXGW WenKai", cursive;
+        --hei: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 18% 10%, rgba(201, 149, 61, 0.16), transparent 30%),
+          linear-gradient(180deg, #f8efe2 0%, #efe0c7 48%, #ead5ba 100%);
+        font-family: var(--song);
+      }
+
+      body::before {
+        position: fixed;
+        inset: 0;
+        z-index: -2;
+        pointer-events: none;
+        content: "";
+        background-image:
+          linear-gradient(rgba(95, 8, 8, 0.04) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(95, 8, 8, 0.035) 1px, transparent 1px);
+        background-size: 34px 34px;
+        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.65), transparent 80%);
+      }
+
+      body::after {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        content: "";
+        opacity: 0.22;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .site-nav {
+        position: fixed;
+        top: 18px;
+        left: 50%;
+        z-index: 20;
+        display: flex;
+        gap: 6px;
+        align-items: center;
+        width: min(920px, calc(100% - 28px));
+        padding: 7px;
+        border: 1px solid rgba(255, 250, 240, 0.55);
+        border-radius: 999px;
+        background: rgba(95, 8, 8, 0.7);
+        box-shadow: 0 16px 45px rgba(57, 12, 12, 0.2);
+        backdrop-filter: blur(18px);
+        transform: translateX(-50%);
+      }
+
+      .site-nav a {
+        flex: 1;
+        min-width: 0;
+        padding: 10px 12px;
+        border-radius: 999px;
+        color: rgba(255, 250, 240, 0.86);
+        font-family: var(--hei);
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0;
+        text-align: center;
+        text-decoration: none;
+        transition:
+          background 180ms ease,
+          color 180ms ease,
+          transform 180ms ease;
+        white-space: nowrap;
+      }
+
+      .site-nav a:hover,
+      .site-nav a.is-active {
+        color: var(--red-900);
+        background: var(--porcelain);
+        transform: translateY(-1px);
+      }
+
+      .hero {
+        position: relative;
+        display: grid;
+        align-items: end;
+        min-height: 84vh;
+        padding: 116px clamp(20px, 5vw, 72px) 70px;
+        overflow: hidden;
+        color: var(--porcelain);
+        isolation: isolate;
+      }
+
+      .hero::before {
+        position: absolute;
+        inset: 0;
+        z-index: -3;
+        content: "";
+        background:
+          linear-gradient(90deg, rgba(47, 8, 8, 0.9) 0%, rgba(95, 8, 8, 0.72) 42%, rgba(47, 8, 8, 0.48) 100%),
+          url("assets/zhongxi-huitong-cover.jpg") right 15% center / min(52vw, 620px) auto no-repeat,
+          #5f0808;
+        filter: saturate(0.9);
+      }
+
+      .hero::after {
+        position: absolute;
+        inset: 0;
+        z-index: -2;
+        content: "";
+        background:
+          linear-gradient(135deg, transparent 0 48%, rgba(255, 250, 240, 0.12) 48.2% 48.8%, transparent 49%),
+          radial-gradient(circle at 72% 18%, rgba(201, 149, 61, 0.26), transparent 24%),
+          linear-gradient(180deg, transparent 65%, rgba(245, 235, 220, 0.96) 100%);
+      }
+
+      .hero-mark {
+        position: absolute;
+        top: 18%;
+        right: clamp(24px, 8vw, 104px);
+        z-index: -1;
+        width: min(22vw, 190px);
+        aspect-ratio: 1;
+        border: 10px solid rgba(255, 250, 240, 0.14);
+        color: rgba(255, 250, 240, 0.18);
+        display: grid;
+        place-items: center;
+        font-family: var(--kai);
+        font-size: clamp(52px, 8vw, 104px);
+        line-height: 1;
+        transform: rotate(-8deg);
+      }
+
+      .hero-content {
+        width: min(920px, 100%);
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        margin: 0 0 18px;
+        color: rgba(255, 250, 240, 0.82);
+        font-family: var(--hei);
+        font-size: 14px;
+        font-weight: 800;
+      }
+
+      .eyebrow::before {
+        width: 42px;
+        height: 2px;
+        content: "";
+        background: var(--gold);
+      }
+
+      h1 {
+        max-width: 880px;
+        margin: 0;
+        font-family: var(--song);
+        font-size: clamp(50px, 9vw, 122px);
+        font-weight: 900;
+        letter-spacing: 0;
+        line-height: 0.96;
+        text-wrap: balance;
+      }
+
+      .hero-lead {
+        max-width: 780px;
+        margin: 28px 0 0;
+        color: rgba(255, 250, 240, 0.86);
+        font-family: var(--kai);
+        font-size: clamp(20px, 2.5vw, 32px);
+        line-height: 1.7;
+      }
+
+      .hero-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 34px;
+      }
+
+      .seal,
+      .ghost-link {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        padding: 11px 16px;
+        border-radius: 4px;
+        font-family: var(--hei);
+        font-size: 13px;
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      .seal {
+        color: var(--red-900);
+        background: var(--porcelain);
+        box-shadow: 8px 8px 0 rgba(201, 149, 61, 0.28);
+      }
+
+      .ghost-link {
+        border: 1px solid rgba(255, 250, 240, 0.36);
+        color: var(--porcelain);
+        background: rgba(255, 250, 240, 0.08);
+      }
+
+      main {
+        position: relative;
+        z-index: 2;
+      }
+
+      section {
+        padding: clamp(68px, 9vw, 116px) clamp(20px, 5vw, 72px);
+      }
+
+      .section-inner {
+        width: min(1180px, 100%);
+        margin: 0 auto;
+      }
+
+      .section-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0 0 18px;
+        color: var(--red-800);
+        font-family: var(--hei);
+        font-size: 13px;
+        font-weight: 900;
+      }
+
+      .section-kicker::before {
+        width: 12px;
+        height: 12px;
+        content: "";
+        border: 3px solid var(--red-700);
+        transform: rotate(45deg);
+      }
+
+      h2 {
+        max-width: 900px;
+        margin: 0;
+        color: var(--red-900);
+        font-family: var(--song);
+        font-size: clamp(34px, 5.2vw, 72px);
+        line-height: 1.08;
+        text-wrap: balance;
+      }
+
+      .section-note {
+        max-width: 820px;
+        margin: 22px 0 0;
+        color: var(--ink-soft);
+        font-family: var(--kai);
+        font-size: clamp(18px, 2vw, 25px);
+        line-height: 1.75;
+      }
+
+      .thesis {
+        margin-top: -28px;
+        padding-top: 0;
+      }
+
+      .thesis-panel {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: clamp(24px, 5vw, 56px);
+        align-items: stretch;
+        padding: clamp(28px, 4vw, 52px);
+        border: 1px solid rgba(95, 8, 8, 0.18);
+        background:
+          linear-gradient(135deg, rgba(255, 250, 240, 0.9), rgba(245, 235, 220, 0.78)),
+          var(--paper);
+        box-shadow: var(--shadow);
+      }
+
+      .thesis-panel::before {
+        position: absolute;
+        top: -13px;
+        left: clamp(28px, 5vw, 68px);
+        width: 180px;
+        height: 26px;
+        content: "";
+        background: rgba(201, 149, 61, 0.36);
+        transform: rotate(-2deg);
+      }
+
+      .big-claim {
+        margin: 0;
+        color: var(--red-900);
+        font-size: clamp(27px, 3.4vw, 47px);
+        font-weight: 900;
+        line-height: 1.24;
+      }
+
+      .claim-copy {
+        margin: 22px 0 0;
+        color: var(--ink-soft);
+        font-size: 18px;
+        line-height: 1.9;
+      }
+
+      .question-list {
+        display: grid;
+        gap: 14px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .question-list li {
+        padding: 18px 18px 18px 22px;
+        border-left: 6px solid var(--red-700);
+        background: rgba(255, 250, 240, 0.72);
+      }
+
+      .question-list strong {
+        display: block;
+        color: var(--red-900);
+        font-family: var(--hei);
+        font-size: 14px;
+        margin-bottom: 6px;
+      }
+
+      .question-list span {
+        color: var(--ink-soft);
+        font-size: 17px;
+        line-height: 1.7;
+      }
+
+      .timeline {
+        background:
+          linear-gradient(180deg, rgba(95, 8, 8, 0.04), rgba(255, 250, 240, 0.28)),
+          var(--paper-deep);
+      }
+
+      .timeline-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 0;
+        margin-top: 46px;
+        border-top: 3px solid var(--red-800);
+      }
+
+      .era {
+        position: relative;
+        min-height: 280px;
+        padding: 30px 20px 22px;
+        border-right: 1px solid rgba(95, 8, 8, 0.18);
+      }
+
+      .era:last-child {
+        border-right: 0;
+      }
+
+      .era::before {
+        position: absolute;
+        top: -12px;
+        left: 20px;
+        width: 20px;
+        height: 20px;
+        content: "";
+        border: 4px solid var(--paper-deep);
+        border-radius: 50%;
+        background: var(--red-700);
+        box-shadow: 0 0 0 2px var(--red-800);
+      }
+
+      .era time {
+        display: block;
+        color: var(--red-900);
+        font-family: var(--hei);
+        font-size: 14px;
+        font-weight: 900;
+      }
+
+      .era h3 {
+        margin: 14px 0 10px;
+        color: var(--ink);
+        font-size: 22px;
+        line-height: 1.25;
+      }
+
+      .era p {
+        margin: 0;
+        color: var(--ink-soft);
+        font-size: 16px;
+        line-height: 1.74;
+      }
+
+      .lens-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+        margin-top: 44px;
+      }
+
+      .lens {
+        position: relative;
+        min-height: 310px;
+        padding: 26px;
+        overflow: hidden;
+        border: 1px solid rgba(95, 8, 8, 0.16);
+        border-radius: 6px;
+        background: rgba(255, 250, 240, 0.74);
+        box-shadow: 0 20px 44px rgba(88, 38, 20, 0.1);
+        transition:
+          transform 220ms ease,
+          box-shadow 220ms ease,
+          border-color 220ms ease;
+      }
+
+      .lens:hover {
+        border-color: rgba(173, 31, 31, 0.5);
+        box-shadow: 0 28px 58px rgba(88, 38, 20, 0.16);
+        transform: translateY(-5px);
+      }
+
+      .lens::after {
+        position: absolute;
+        right: -26px;
+        bottom: -32px;
+        color: rgba(173, 31, 31, 0.07);
+        content: attr(data-no);
+        font-family: Georgia, serif;
+        font-size: 140px;
+        font-weight: 900;
+        line-height: 1;
+      }
+
+      .lens h3 {
+        margin: 0 0 14px;
+        color: var(--red-900);
+        font-size: 24px;
+      }
+
+      .lens p {
+        margin: 0;
+        color: var(--ink-soft);
+        font-size: 16px;
+        line-height: 1.78;
+      }
+
+      .media-archive {
+        background:
+          linear-gradient(180deg, rgba(255, 250, 240, 0.52), rgba(233, 215, 189, 0.8)),
+          var(--paper);
+      }
+
+      .media-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: clamp(20px, 4vw, 42px);
+        margin-top: 46px;
+        align-items: stretch;
+      }
+
+      .video-frame,
+      .media-card {
+        border: 1px solid rgba(95, 8, 8, 0.18);
+        background: rgba(255, 250, 240, 0.78);
+        box-shadow: 0 20px 46px rgba(88, 38, 20, 0.12);
+      }
+
+      .video-frame {
+        position: relative;
+        min-height: 100%;
+        padding: 18px;
+      }
+
+      .video-shell {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 16 / 9;
+        background:
+          linear-gradient(rgba(95, 8, 8, 0.12), rgba(95, 8, 8, 0.12)),
+          url("assets/bits-of-china-poster.jpg") center / cover no-repeat,
+          #1c100f;
+      }
+
+      .video-shell video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .video-caption,
+      .media-card figcaption {
+        margin-top: 14px;
+        color: var(--ink-soft);
+        font-family: var(--hei);
+        font-size: 13px;
+        line-height: 1.65;
+      }
+
+      .media-stack {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+
+      .media-card {
+        margin: 0;
+        padding: 14px;
+      }
+
+      .media-card.wide {
+        grid-column: 1 / -1;
+      }
+
+      .media-card img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        border: 1px solid rgba(95, 8, 8, 0.18);
+        filter: sepia(0.18) contrast(0.96);
+      }
+
+      .media-card.portrait img {
+        aspect-ratio: 3 / 4;
+        object-position: center top;
+      }
+
+      .debate {
+        color: var(--porcelain);
+        background:
+          linear-gradient(135deg, rgba(95, 8, 8, 0.96), rgba(35, 24, 21, 0.92)),
+          var(--red-900);
+      }
+
+      .debate .section-kicker,
+      .debate h2,
+      .debate .section-note {
+        color: var(--porcelain);
+      }
+
+      .debate .section-kicker::before {
+        border-color: var(--gold);
+      }
+
+      .debate-map {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        gap: 24px;
+        align-items: center;
+        margin-top: 48px;
+      }
+
+      .argument {
+        min-height: 310px;
+        padding: 30px;
+        border: 1px solid rgba(255, 250, 240, 0.18);
+        background: rgba(255, 250, 240, 0.08);
+      }
+
+      .argument h3 {
+        margin: 0 0 16px;
+        color: #ffe2b0;
+        font-size: 28px;
+      }
+
+      .argument ul {
+        display: grid;
+        gap: 14px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .argument li {
+        position: relative;
+        padding-left: 18px;
+        color: rgba(255, 250, 240, 0.86);
+        font-size: 17px;
+        line-height: 1.74;
+      }
+
+      .argument li::before {
+        position: absolute;
+        top: 0.72em;
+        left: 0;
+        width: 7px;
+        height: 7px;
+        content: "";
+        background: var(--gold);
+        transform: rotate(45deg);
+      }
+
+      .versus {
+        display: grid;
+        place-items: center;
+        width: 88px;
+        height: 88px;
+        border: 2px solid rgba(255, 250, 240, 0.34);
+        border-radius: 50%;
+        color: #ffe2b0;
+        font-family: var(--hei);
+        font-size: 15px;
+        font-weight: 900;
+      }
+
+      .figures-grid {
+        display: grid;
+        grid-template-columns: 1.2fr repeat(3, 1fr);
+        gap: 18px;
+        margin-top: 44px;
+      }
+
+      .figure-card {
+        padding: 24px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: rgba(255, 250, 240, 0.78);
+      }
+
+      .figure-card.featured {
+        color: var(--porcelain);
+        background:
+          linear-gradient(150deg, rgba(173, 31, 31, 0.95), rgba(95, 8, 8, 0.95)),
+          var(--red-800);
+      }
+
+      .figure-card small {
+        display: block;
+        margin-bottom: 14px;
+        color: inherit;
+        font-family: var(--hei);
+        font-weight: 900;
+        opacity: 0.72;
+      }
+
+      .figure-card h3 {
+        margin: 0 0 12px;
+        font-size: 25px;
+      }
+
+      .figure-card p {
+        margin: 0;
+        color: inherit;
+        font-size: 16px;
+        line-height: 1.75;
+        opacity: 0.86;
+      }
+
+      .exhibit {
+        background: rgba(255, 250, 240, 0.4);
+      }
+
+      .exhibit-layout {
+        display: grid;
+        grid-template-columns: 0.78fr 1.22fr;
+        gap: clamp(26px, 5vw, 62px);
+        align-items: center;
+        margin-top: 42px;
+      }
+
+      .scan {
+        position: relative;
+        margin: 0;
+        padding: 16px;
+        background: rgba(255, 250, 240, 0.86);
+        box-shadow: var(--shadow);
+        transform: rotate(-1.5deg);
+      }
+
+      .scan img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border: 1px solid rgba(95, 8, 8, 0.22);
+        filter: sepia(0.1) contrast(0.98);
+      }
+
+      .scan figcaption {
+        margin-top: 12px;
+        color: var(--ink-soft);
+        font-family: var(--hei);
+        font-size: 12px;
+        line-height: 1.6;
+      }
+
+      .exhibit-copy {
+        display: grid;
+        gap: 18px;
+      }
+
+      .quote-block {
+        margin: 0;
+        padding-left: 24px;
+        border-left: 8px solid var(--red-700);
+        color: var(--red-900);
+        font-family: var(--kai);
+        font-size: clamp(25px, 3.2vw, 42px);
+        line-height: 1.35;
+      }
+
+      .exhibit-copy p {
+        margin: 0;
+        color: var(--ink-soft);
+        font-size: 18px;
+        line-height: 1.9;
+      }
+
+      .summary-strip {
+        padding: 0 clamp(20px, 5vw, 72px) clamp(72px, 8vw, 108px);
+      }
+
+      .summary-box {
+        width: min(1180px, 100%);
+        margin: 0 auto;
+        padding: clamp(28px, 5vw, 54px);
+        color: var(--porcelain);
+        background:
+          linear-gradient(110deg, rgba(95, 8, 8, 0.98), rgba(173, 31, 31, 0.9)),
+          var(--red-900);
+        box-shadow: 14px 14px 0 rgba(201, 149, 61, 0.22);
+      }
+
+      .summary-box h2 {
+        color: var(--porcelain);
+      }
+
+      .summary-box p {
+        max-width: 900px;
+        margin: 24px 0 0;
+        color: rgba(255, 250, 240, 0.86);
+        font-family: var(--kai);
+        font-size: clamp(20px, 2.4vw, 30px);
+        line-height: 1.72;
+      }
+
+      .references {
+        background: #261816;
+        color: var(--porcelain);
+      }
+
+      .references h2,
+      .references .section-kicker {
+        color: var(--porcelain);
+      }
+
+      .references .section-kicker::before {
+        border-color: var(--gold);
+      }
+
+      .ref-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        margin: 38px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .ref-list li {
+        padding: 20px;
+        border: 1px solid rgba(255, 250, 240, 0.14);
+        background: rgba(255, 250, 240, 0.06);
+      }
+
+      .ref-list a {
+        color: #ffe2b0;
+        font-weight: 900;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 5px;
+      }
+
+      .ref-list span {
+        display: block;
+        margin-top: 8px;
+        color: rgba(255, 250, 240, 0.72);
+        font-size: 14px;
+        line-height: 1.7;
+      }
+
+      footer {
+        padding: 26px clamp(20px, 5vw, 72px);
+        color: rgba(255, 250, 240, 0.66);
+        background: #1c100f;
+        font-family: var(--hei);
+        font-size: 13px;
+        text-align: center;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(22px);
+        transition:
+          opacity 700ms ease,
+          transform 700ms ease;
+      }
+
+      .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (max-width: 980px) {
+        .site-nav {
+          overflow-x: auto;
+          justify-content: flex-start;
+        }
+
+        .site-nav a {
+          flex: 0 0 auto;
+        }
+
+        .hero::before {
+          background:
+            linear-gradient(90deg, rgba(47, 8, 8, 0.94), rgba(95, 8, 8, 0.72)),
+            url("assets/zhongxi-huitong-cover.jpg") right -120px center / 520px auto no-repeat,
+            #5f0808;
+        }
+
+        .thesis-panel,
+        .exhibit-layout,
+        .debate-map,
+        .media-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .timeline-grid,
+        .lens-grid,
+        .figures-grid,
+        .media-stack,
+        .ref-list {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .versus {
+          justify-self: center;
+          width: 64px;
+          height: 64px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .site-nav {
+          top: 10px;
+          width: calc(100% - 18px);
+          border-radius: 14px;
+        }
+
+        .site-nav a {
+          padding: 9px 10px;
+          font-size: 12px;
+        }
+
+        .hero {
+          min-height: 86vh;
+          padding-top: 104px;
+        }
+
+        .hero::before {
+          background:
+            linear-gradient(180deg, rgba(47, 8, 8, 0.95), rgba(95, 8, 8, 0.76)),
+            url("assets/zhongxi-huitong-cover.jpg") center top 78px / 360px auto no-repeat,
+            #5f0808;
+        }
+
+        .hero-mark {
+          display: none;
+        }
+
+        h1 {
+          font-size: clamp(42px, 16vw, 68px);
+        }
+
+        .timeline-grid,
+        .lens-grid,
+        .figures-grid,
+        .media-stack,
+        .ref-list {
+          grid-template-columns: 1fr;
+        }
+
+        .media-card.wide {
+          grid-column: auto;
+        }
+
+        .era {
+          min-height: auto;
+          border-right: 0;
+          border-left: 1px solid rgba(95, 8, 8, 0.18);
+        }
+
+        .scan {
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="site-nav" aria-label="页面导航">
+      <a href="#thesis">总论</a>
+      <a href="#timeline">脉络</a>
+      <a href="#media">影像</a>
+      <a href="#transform">转型</a>
+      <a href="#debate">论争</a>
+      <a href="#references">参考</a>
+    </nav>
+
+    <header class="hero">
+      <div class="hero-mark" aria-hidden="true">医</div>
+      <div class="hero-content reveal">
+        <p class="eyebrow">近代史纲要专题展示</p>
+        <h1>近代西学东渐下的中医转型</h1>
+        <p class="hero-lead">
+          鸦片战争后，传教医院、译书和新式学堂将西医带入中国，解剖、实验和公共卫生观念改变了疾病理解，中医面临调整压力。
+        </p>
+        <div class="hero-meta">
+          <a class="seal" href="#thesis">看核心论点</a>
+          <a class="ghost-link" href="#timeline">进入历史脉络</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="thesis" class="thesis">
+        <div class="section-inner thesis-panel reveal">
+          <div>
+            <p class="section-kicker">核心判断</p>
+            <p class="big-claim">
+              西医进入后，中医没有消失，但也无法原样延续，必须面对科学话语、职业规范和国家医政。
+            </p>
+            <p class="claim-copy">
+              本页不判优劣，只看中医如何进入学校、报刊、制度，如何与民族危机产生关联。
+            </p>
+          </div>
+          <ul class="question-list" aria-label="展示问题">
+            <li>
+              <strong>为什么被冲击</strong>
+              <span>传教医院、解剖学、公共卫生和学校教育建立了新的医疗权威。</span>
+            </li>
+            <li>
+              <strong>如何回应冲击</strong>
+              <span>中医界通过中西汇通、重释经典、办学结社、报刊论战和请愿来回应。</span>
+            </li>
+            <li>
+              <strong>留下什么问题</strong>
+              <span>传统医术如何进入现代制度，经验如何接受科学检验，成为遗留问题。</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="timeline" class="timeline">
+        <div class="section-inner">
+          <p class="section-kicker reveal">时间线</p>
+          <h2 class="reveal">从口岸西医到民国国医论争，中医成为近代公共议题。</h2>
+          <p class="section-note reveal">
+            西学通过医院、译书、学堂、报刊和法规进入日常生活，改变了医生的学习方式和社会的信任机制。
+          </p>
+          <div class="timeline-grid">
+            <article class="era reveal">
+              <time>1840s-1860s</time>
+              <h3>西医进入口岸</h3>
+              <p>1840-1860年代，传教医院和新式医馆在沿海城市扩展，西医以诊疗、慈善和教育的面目出现。</p>
+            </article>
+            <article class="era reveal">
+              <time>1870s-1890s</time>
+              <h3>知识开始对译</h3>
+              <p>1870-1890年代，解剖、生理、化学、病理等概念被翻译进来，中医家试图用西医术语解释脏腑、气化和经络。</p>
+            </article>
+            <article class="era reveal">
+              <time>1892</time>
+              <h3>“中西汇通”成形</h3>
+              <p>1892年，唐宗海《中西汇通医经精义》参照西医知识重新解释中医经典。</p>
+            </article>
+            <article class="era reveal">
+              <time>1912-1937</time>
+              <h3>职业合法性之争</h3>
+              <p>1912-1937年，民国建立医政、学校、执照和卫生行政制度，中医界通过学会、刊物和请愿争取合法地位。</p>
+            </article>
+            <article class="era reveal">
+              <time>1929 之后</time>
+              <h3>国医运动与再定位</h3>
+              <p>1929年“废止旧医”案激化论争，国医运动兴起，中医成为民族文化、科学标准与国家政策交织的公共议题。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="media" class="media-archive">
+        <div class="section-inner">
+          <p class="section-kicker reveal">影像档案</p>
+          <h2 class="reveal">旧图像中的药箱、针灸图谱、医院和城市景观展现转型现场。</h2>
+          <p class="section-note reveal">
+            图像呈现传统医药器物与西医制度空间的并存。
+          </p>
+          <div class="media-grid">
+            <article class="video-frame reveal">
+              <div class="video-shell">
+                <video
+                  controls
+                  preload="metadata"
+                  poster="assets/bits-of-china-poster.jpg"
+                  aria-label="Bits of China，约 1930 年中国城市纪录片"
+                >
+                  <source
+                    src="https://archive.org/download/6027_Bits_of_China_01_49_44_00/6027_Bits_of_China_01_49_44_00.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+              </div>
+              <p class="video-caption">
+                影像：<em>Bits of China</em>，Cine Art Productions，约 1930 年，Prelinger Archives / Internet Archive。片中城市街景可作为近代口岸社会的视觉背景。
+              </p>
+            </article>
+            <div class="media-stack">
+              <figure class="media-card portrait reveal">
+                <img
+                  src="assets/acupuncture-chart.jpg"
+                  alt="18 世纪中国针灸图谱"
+                  loading="lazy"
+                />
+                <figcaption>针灸图谱体现传统医学以经络、穴位组织身体知识的方式。</figcaption>
+              </figure>
+              <figure class="media-card portrait reveal">
+                <img
+                  src="assets/medicine-chest.jpg"
+                  alt="中国药箱，1801 至 1985 年间"
+                  loading="lazy"
+                />
+                <figcaption>中药箱呈现传统药物分类、储藏和市井诊疗的物质基础。</figcaption>
+              </figure>
+              <figure class="media-card wide reveal">
+                <img
+                  src="assets/mukden-hospital-1900.jpg"
+                  alt="1900 年奉天医院废墟"
+                  loading="lazy"
+                />
+                <figcaption>1900 年奉天医院废墟，提示传教医院与战乱、口岸政治和西医制度之间的复杂关联。</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="transform">
+        <div class="section-inner">
+          <p class="section-kicker reveal">四重转型</p>
+          <h2 class="reveal">知识、身份、方法、制度四个层面呈现中医变化。</h2>
+          <div class="lens-grid">
+            <article class="lens reveal" data-no="01">
+              <h3>知识转译</h3>
+              <p>
+                西医的解剖图谱、实验语言和病理分类给气血、脏腑、经络理论带来解释压力。
+              </p>
+            </article>
+            <article class="lens reveal" data-no="02">
+              <h3>医者身份</h3>
+              <p>
+                医者身份从师承与乡里声望，转向学校、考试、学会、执照、报刊舆论。
+              </p>
+            </article>
+            <article class="lens reveal" data-no="03">
+              <h3>临床方法</h3>
+              <p>
+                辨证论治被保留，但诊断、病名、病例书写和药物解释开始吸收观察和实验的要求。
+              </p>
+            </article>
+            <article class="lens reveal" data-no="04">
+              <h3>制度处境</h3>
+              <p>
+                国家卫生行政要求中医回应教育标准、执照制度、公共卫生和社会服务。
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="debate" class="debate">
+        <div class="section-inner">
+          <p class="section-kicker reveal">关键论争</p>
+          <h2 class="reveal">“国粹”与“科学”之争，本质是医疗权威如何界定。</h2>
+          <p class="section-note reveal">
+            一方强调经验和民族文化，一方强调实验、解剖、公共卫生标准。
+          </p>
+          <div class="debate-map">
+            <article class="argument reveal">
+              <h3>保存与会通</h3>
+              <ul>
+                <li>主张保留经典、经验、辨证论治，因为它们长期服务民间医疗。</li>
+                <li>强调中医也是中国文化与民族身份的一部分。</li>
+                <li>认为不能用西医一套标准简单否定中医。</li>
+              </ul>
+            </article>
+            <div class="versus reveal" aria-hidden="true">对话</div>
+            <article class="argument reveal">
+              <h3>批判与改造</h3>
+              <ul>
+                <li>批评者要求医学接受解剖、实验、统计和公共卫生的检验。</li>
+                <li>新式医政倾向用学校、执照、医院来定义合格医生。</li>
+                <li>科学话语使中医必须解释自身方法和疗效。</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="exhibit">
+        <div class="section-inner">
+          <p class="section-kicker reveal">文本现场</p>
+          <h2 class="reveal">唐宗海的“中西汇通”是近代中医面对西学的一种回应。</h2>
+          <div class="exhibit-layout">
+            <figure class="scan reveal">
+              <img
+                src="assets/zhongxi-huitong-cover.jpg"
+                alt="《中西汇通医经精义》书影扫描"
+                loading="lazy"
+              />
+              <figcaption>
+                书影：唐宗海《中西汇通医经精义》扫描件，来源 Wikimedia Commons / CADAL，公有领域标识。
+              </figcaption>
+            </figure>
+            <div class="exhibit-copy reveal">
+              <blockquote class="quote-block">
+                汇通不是简单折中，而是在新知识压迫下重读旧经典。
+              </blockquote>
+              <p>
+                唐宗海借助西医解剖和生理知识解释中医经典，希望证明传统理论并非无据。
+              </p>
+              <p>
+                这种写法说明中医已无法只在原有话语内自证，它必须回应新的知识秩序。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="summary-strip" aria-label="结论">
+        <div class="summary-box reveal">
+          <h2>结论</h2>
+          <p>
+            近代中医的转型，不是旧医消亡的故事，而是一种传统医学在现代国家、科学话语与民族危机中重新寻找位置的过程。
+          </p>
+        </div>
+      </section>
+
+      <section id="references" class="references">
+        <div class="section-inner">
+          <p class="section-kicker reveal">参考文献</p>
+          <h2 class="reveal">本页参考了医学史、近代史研究与公开影像资料。</h2>
+          <ul class="ref-list">
+            <li class="reveal">
+              <a
+                href="https://www.cambridge.org/core/journals/modern-asian-studies/article/national-essence-vs-science-chinese-native-physicians-fight-for-legitimacy-191237/FB23FCFCAE9C9AD8D16BEB2406976145"
+                target="_blank"
+                rel="noopener"
+              >
+                Xu Xiaoqun, “National Essence vs Science”
+              </a>
+              <span>讨论 1912-1937 年中医从业者围绕“国粹”与“科学”争取合法性的过程。</span>
+            </li>
+            <li class="reveal">
+              <a
+                href="https://direct.mit.edu/books/book/2439/Neither-Donkey-nor-HorseMedicine-in-the-Struggle"
+                target="_blank"
+                rel="noopener"
+              >
+                Sean Hsiang-lin Lei, Neither Donkey nor Horse
+              </a>
+              <span>以近代中国医学身份、国家建设和中西医关系为中心，分析中医现代处境。</span>
+            </li>
+            <li class="reveal">
+              <a
+                href="https://commons.wikimedia.org/wiki/File:CADAL02092743_%E4%B8%AD%E8%A5%BF%E5%8C%AF%E9%80%9A%E9%86%AB%E7%B6%93%E7%B2%BE%E7%BE%A9%EF%BC%88%E4%B8%80%EF%BC%89.djvu"
+                target="_blank"
+                rel="noopener"
+              >
+                唐宗海《中西汇通医经精义》
+              </a>
+              <span>“中西汇通”思路的重要文本，页面首屏与展品区使用其公有领域扫描图。</span>
+            </li>
+            <li class="reveal">
+              <a
+                href="https://www.jstor.org/stable/10.1525/hsps.2007.37.2.333"
+                target="_blank"
+                rel="noopener"
+              >
+                Bridie Andrews, “Tuberculosis and the Assimilation of Germ Theory in China”
+              </a>
+              <span>可辅助理解病菌学、西医知识与近代中国医学观念变化之间的关系。</span>
+            </li>
+            <li class="reveal">
+              <a
+                href="https://archive.org/details/6027_Bits_of_China_01_49_44_00"
+                target="_blank"
+                rel="noopener"
+              >
+                Bits of China, Prelinger Archives
+              </a>
+              <span>约 1930 年中国城市影像，用于补充近代口岸城市、交通与社会生活的视觉背景。</span>
+            </li>
+            <li class="reveal">
+              <a
+                href="https://commons.wikimedia.org/wiki/File:Medicine_chest,_China,_1801-1985_Wellcome_L0066083.jpg"
+                target="_blank"
+                rel="noopener"
+              >
+                Medicine chest, China, Wellcome Collection
+              </a>
+              <span>中医药物器物图像，页面“影像档案”区使用其 Wikimedia Commons 版本。</span>
+            </li>
+            <li class="reveal">
+              <a
+                href="https://commons.wikimedia.org/wiki/File:Chinese_Acupuncture_chart,_18th_century._Wellcome_L0003721.jpg"
+                target="_blank"
+                rel="noopener"
+              >
+                Chinese Acupuncture Chart, Wellcome Collection
+              </a>
+              <span>18 世纪针灸图谱，作为传统身体知识体系的视觉材料。</span>
+            </li>
+            <li class="reveal">
+              <a
+                href="https://commons.wikimedia.org/wiki/File:Mukden_Hospital_in_Ruins,_Manchuria,_1900_(imp-cswc-GB-237-CSWC47-LS8-033).jpg"
+                target="_blank"
+                rel="noopener"
+              >
+                Mukden Hospital in Ruins, 1900
+              </a>
+              <span>奉天医院历史图像，用于呈现西医传教医院在近代中国的制度空间。</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      近代史纲要课程展示页｜静态 HTML，可直接部署至 GitHub Pages。
+    </footer>
+
+    <script>
+      const sections = [...document.querySelectorAll("main section[id]")];
+      const navLinks = [...document.querySelectorAll(".site-nav a")];
+
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.16 }
+      );
+
+      document.querySelectorAll(".reveal").forEach((item, index) => {
+        item.style.transitionDelay = `${Math.min(index % 5, 4) * 70}ms`;
+        revealObserver.observe(item);
+      });
+
+      const navObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            navLinks.forEach((link) => {
+              link.classList.toggle(
+                "is-active",
+                link.getAttribute("href") === `#${entry.target.id}`
+              );
+            });
+          });
+        },
+        { rootMargin: "-40% 0px -52% 0px", threshold: 0 }
+      );
+
+      sections.forEach((section) => navObserver.observe(section));
+    </script>
+  </body>
+</html>
