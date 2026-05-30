@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title id="title">国医运动与中医制度化示意图</title>
+  <desc id="desc">原创示意图：报纸、请愿书、中央国医馆匾额和解剖图并置，表现民国时期中医在科学话语和国家医政之间争取位置。</desc>
+  <defs>
+    <linearGradient id="paper" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fff7e6"/>
+      <stop offset="1" stop-color="#e8cfaa"/>
+    </linearGradient>
+    <linearGradient id="red" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#861313"/>
+      <stop offset="1" stop-color="#c7352a"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#45100d" flood-opacity=".22"/>
+    </filter>
+    <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse">
+      <path d="M34 0H0V34" fill="none" stroke="#7d1616" stroke-opacity=".12"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="820" fill="#f2dfc3"/>
+  <rect width="1200" height="820" fill="url(#grid)" opacity=".8"/>
+  <path d="M0 0H1200V168C984 138 760 148 554 204 344 261 172 357 0 360Z" fill="#6b0d0d"/>
+  <path d="M0 0H1200V128C984 112 782 126 574 185 358 246 154 344 0 342Z" fill="#861313" opacity=".72"/>
+
+  <g filter="url(#shadow)">
+    <rect x="78" y="130" width="344" height="520" rx="8" fill="url(#paper)" stroke="#6b0d0d" stroke-opacity=".25"/>
+    <rect x="106" y="166" width="288" height="62" fill="#f8ead2" stroke="#6b0d0d" stroke-opacity=".18"/>
+    <text x="250" y="210" text-anchor="middle" font-family="Songti SC, STSong, serif" font-size="34" fill="#6b0d0d" font-weight="700">医药请愿</text>
+    <path d="M116 268H382M116 309H382M116 350H310M116 392H362M116 434H332" stroke="#5b3327" stroke-width="8" stroke-linecap="round" opacity=".42"/>
+    <path d="M128 498c62-30 118-28 174 4 34 20 58 24 82 8" fill="none" stroke="#9d1e1e" stroke-width="9" stroke-linecap="round"/>
+    <circle cx="338" cy="560" r="46" fill="none" stroke="#9d1e1e" stroke-width="9"/>
+    <text x="338" y="574" text-anchor="middle" font-family="Kaiti SC, STKaiti, serif" font-size="36" fill="#9d1e1e">国医</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="456" y="80" width="330" height="590" rx="8" fill="#fffaf0" stroke="#6b0d0d" stroke-opacity=".25"/>
+    <rect x="490" y="118" width="262" height="76" fill="url(#red)"/>
+    <text x="621" y="169" text-anchor="middle" font-family="Songti SC, STSong, serif" font-size="34" fill="#fffaf0" font-weight="700">中央国医馆</text>
+    <rect x="506" y="238" width="230" height="312" fill="#f2dfc3" stroke="#6b0d0d" stroke-opacity=".22"/>
+    <path d="M562 518V288M680 518V288M535 344H706M548 424H692" stroke="#7c1717" stroke-width="10" stroke-linecap="round" opacity=".72"/>
+    <path d="M536 574H706" stroke="#c9953d" stroke-width="12" stroke-linecap="round"/>
+    <text x="621" y="630" text-anchor="middle" font-family="Kaiti SC, STKaiti, serif" font-size="32" fill="#5f0808">以科学方式整理国医</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="820" y="164" width="300" height="476" rx="8" fill="#f9ebd2" stroke="#6b0d0d" stroke-opacity=".25"/>
+    <text x="970" y="216" text-anchor="middle" font-family="Songti SC, STSong, serif" font-size="32" fill="#6b0d0d" font-weight="700">解剖与病名</text>
+    <path d="M970 278c-48 0-88 44-88 104 0 82 88 112 88 188 0-76 88-106 88-188 0-60-40-104-88-104Z" fill="none" stroke="#5f0808" stroke-width="9"/>
+    <path d="M970 318v230M926 378h88M914 444h112M932 508h76" stroke="#5f0808" stroke-width="7" stroke-linecap="round" opacity=".8"/>
+    <path d="M858 604H1082" stroke="#c9953d" stroke-width="11" stroke-linecap="round"/>
+    <text x="970" y="672" text-anchor="middle" font-family="Kaiti SC, STKaiti, serif" font-size="30" fill="#5f0808">传统经验接受检验</text>
+  </g>
+
+  <path d="M426 408H456M786 408H820" stroke="#c9953d" stroke-width="12" stroke-linecap="round"/>
+  <path d="M448 408l-20-16v32Zm350 0-20-16v32Z" fill="#c9953d"/>
+  <text x="600" y="760" text-anchor="middle" font-family="Songti SC, STSong, serif" font-size="30" fill="#5f0808" font-weight="700">从请愿抗争，到制度承认，再到知识整理</text>
+</svg>
