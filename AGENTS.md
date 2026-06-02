@@ -12,6 +12,11 @@
 - `assets/zhongxi-huitong-cover.jpg`：唐宗海《中西汇通医经精义》扫描图，用作页面视觉资产。
 - `assets/quanti-xinlun-anatomy.jpg`：《全体新论》肌肉解剖图页，用于“影像档案”区。
 - `assets/guoyi-movement-illustration.svg`：原创国医运动与中医制度化示意图，用于“影像档案”区。
+- `assets/peter-parker-physician-1860s.jpg`：伯驾照片，用于“影像档案”区说明西医入华与口岸医院。
+- `assets/benjamin-hobson-canton.jpg`：合信画像，用于“影像档案”区说明医学译介。
+- `assets/canton-hospital-lab-tests.jpg`：1920 年广州博济医院实验室检测图，用于“影像档案”区说明实验室与预防医学。
+- `assets/peking-union-rockefeller-hospital-1924.jpg`：1924 年北京协和医院照片，用于“影像档案”区说明新式医院制度。
+- `assets/peking-union-rockefeller-institute-1924.jpg`：1924 年北京协和研究所照片，用于“影像档案”区说明实验研究与学院体系。
 - `assets/republic-era-medicine-debate.mp4`：用户提供的《民国时代的中西医之争》剪辑视频，用于“影像档案”区。
 - `assets/republic-era-medicine-debate-poster.jpg`：从上述视频截取的封面图，用作视频区域兜底背景。
 
@@ -38,3 +43,4 @@
 
 - 根据用户截图反馈删除首屏“近代史纲要专题展示”小标题，新增展示成员姓名学号：汪瑞文 2023461018、庞佳丽 2023461021。
 - 重写“脉络”和“四重转型”展开补充，避免与卡片正文重复，改为更具体的史实、例证与解释。
+- 根据用户要求增加严格贴合主题的影像资料：新增伯驾、合信、博济医院实验室、北京协和医院、北京协和研究所等图片，并同步补充页面参考来源。
