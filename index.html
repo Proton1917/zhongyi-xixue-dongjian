@@ -221,6 +221,24 @@
         margin-top: 34px;
       }
 
+      .student-roster {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 16px;
+        margin-top: 18px;
+        color: rgba(255, 250, 240, 0.78);
+        font-family: var(--hei);
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .student-roster span {
+        padding: 7px 10px;
+        border: 1px solid rgba(255, 250, 240, 0.24);
+        border-radius: 4px;
+        background: rgba(255, 250, 240, 0.08);
+      }
+
       .seal,
       .ghost-link {
         display: inline-flex;
@@ -1149,7 +1167,6 @@
     <header class="hero">
       <div class="hero-mark" aria-hidden="true">医</div>
       <div class="hero-content reveal">
-        <p class="eyebrow">近代史纲要专题展示</p>
         <h1>近代西学东渐下的中医转型</h1>
         <p class="hero-lead">
           鸦片战争之后，传教士在通商口岸开设医院、翻译医学著作、创办新式学堂，解剖学与实验方法随之传入。一套全然不同的身体认知开始在中国社会扎根，延续数千年的中医传统由此步入了一段深刻而曲折的转型历程。
@@ -1157,6 +1174,10 @@
         <div class="hero-meta">
           <a class="seal" href="#thesis">看核心论点</a>
           <a class="ghost-link" href="#timeline">进入历史脉络</a>
+        </div>
+        <div class="student-roster" aria-label="姓名学号">
+          <span>汪瑞文 2023461018</span>
+          <span>庞佳丽 2023461021</span>
         </div>
       </div>
     </header>
@@ -1167,10 +1188,10 @@
           <div class="thesis-document">
             <p class="section-kicker">导言</p>
             <p class="big-claim">
-              西医带来的不只是另一种治病方法，而是一套全新的标准：什么才算”医学”。
+              西医带来的不只是另一种治病方法，而是一套全新的标准：什么才算“医学”。
             </p>
             <p class="claim-copy">
-              晚清至民国的历史现场，远比一句"中西医孰优孰劣"所能概括：西式医院拔地而起，医学译著接连问世，报刊论争此起彼伏，中医正是在这些变局之中寻找着自身的出路。
+              晚清至民国的历史现场，远比一句“中西医孰优孰劣”所能概括：西式医院拔地而起，医学译著接连问世，报刊论争此起彼伏，中医正是在这些变局之中寻找着自身的出路。
             </p>
           </div>
           <ul class="question-list" aria-label="史料线索">
@@ -1193,7 +1214,7 @@
       <section id="timeline" class="timeline">
         <div class="section-inner">
           <p class="section-kicker reveal">时间线</p>
-          <h2 class="reveal">从口岸传入到"废止旧医"风波，中西医之间的碰撞与对话绵延近百年。</h2>
+          <h2 class="reveal">从口岸传入到“废止旧医”风波，中西医之间的碰撞与对话绵延近百年。</h2>
           <p class="section-note reveal">
             西医借助医院、译书、学堂、报刊和法规等多重渠道渗入日常生活，不仅带来了新的诊疗技术，也深刻改变了民众对于医疗的选择方式与信任结构。
           </p>
@@ -1207,7 +1228,7 @@
               </button>
               <div class="detail-panel" id="era-port" hidden>
                 <strong>补充</strong>
-                西医最初进入中国，并非以理论著作开路，而是通过医院、学校和慈善诊疗等实际活动在口岸城市扎根。
+                1835年，伯驾在广州开办眼科医局。眼科、外科一类疗效较易被看见的治疗，先让部分患者感受到“洋医”的实际作用。
               </div>
             </article>
             <article class="era reveal">
@@ -1219,7 +1240,7 @@
               </button>
               <div class="detail-panel" id="era-translation" hidden>
                 <strong>补充</strong>
-                合信的《全体新论》是典型案例：书中将人体画成肌肉、骨骼和器官，传统”脏腑气化”的解释方式由此受到质疑。
+                合信《全体新论》的特别之处，在于它不仅翻译概念，还配合图像说明器官位置与功能，读者面对的是一套可视化的身体知识。
               </div>
             </article>
             <article class="era reveal">
@@ -1231,7 +1252,7 @@
               </button>
               <div class="detail-panel" id="era-huitong" hidden>
                 <strong>补充</strong>
-                “汇通”并非简单合并中西医，而是中医家在新知识面前主动回应，试图证明经典仍有解释力。
+                唐宗海没有放弃中医经典，而是把西医知识当作新的参照，用来解释《内经》中的脏腑、经络和气化。
               </div>
             </article>
             <article class="era reveal">
@@ -1243,19 +1264,19 @@
               </button>
               <div class="detail-panel" id="era-license" hidden>
                 <strong>补充</strong>
-                这一阶段的核心已不在看病方法本身，而在于医生资格、学校课程、行业组织与国家承认等制度层面的博弈。
+                当“合格医生”由行政规章、学校课程和考试制度来界定，师承经验就必须转化为可登记、可审查的资质。
               </div>
             </article>
             <article class="era reveal">
               <time>1929 之后</time>
               <h3>国医运动与再定位</h3>
-              <p>1929年”废止旧医”提案一出，全国中医界群情激愤、联名请愿，”国医”运动由此发端，中医存废之争与民族情感、国家政策深度交织。</p>
+              <p>1929年“废止旧医”提案一出，全国中医界群情激愤、联名请愿，“国医”运动由此发端，中医存废之争与民族情感、国家政策深度交织。</p>
               <button class="detail-toggle" type="button" aria-expanded="false" aria-controls="era-guoyi" data-toggle-detail>
                 展开详情
               </button>
               <div class="detail-panel" id="era-guoyi" hidden>
                 <strong>补充</strong>
-                “国医”这一命名本身就意味深长——它将医学问题、民族身份和现代国家制度放在了同一张桌面上。
+                请愿与舆论动员之后，中央国医馆等机构相继出现，中医开始以“国医”的名义争取国家层面的承认。
               </div>
             </article>
           </div>
@@ -1366,7 +1387,7 @@
               </button>
               <div class="detail-panel" id="lens-knowledge" hidden>
                 <strong>补充</strong>
-                直观的例子是解剖图：西医把身体画成可拆解的器官，中医传统的气化图景随之需要新的解释方式。
+                同一个“身体”由此出现两种读法：一边是图谱中的器官位置，一边是医案中的气血运行。争论也常从这里开始。
               </div>
             </article>
             <article class="lens reveal" data-no="02">
@@ -1379,7 +1400,7 @@
               </button>
               <div class="detail-panel" id="lens-identity" hidden>
                 <strong>补充</strong>
-                过去的医生靠师傅带出来、靠乡邻认可，近代以后还要面对毕业资格、执业考试和行业学会的要求。
+                变化的关键在于评价者发生转移：从患者、家族和地方口碑，转向学校、卫生机关和专业团体共同审核。
               </div>
             </article>
             <article class="lens reveal" data-no="03">
@@ -1392,7 +1413,7 @@
               </button>
               <div class="detail-panel" id="lens-clinic" hidden>
                 <strong>补充</strong>
-                “保留”与”改变”同时发生：方药经验继续使用，但病例记录和病名分类逐渐向现代标准靠拢。
+                病例一旦写入报刊、教材或学会记录，个人经验就被拿出来比较和讨论，诊疗方法也更容易接受公开审视。
               </div>
             </article>
             <article class="lens reveal" data-no="04">
@@ -1405,7 +1426,7 @@
               </button>
               <div class="detail-panel" id="lens-system" hidden>
                 <strong>补充</strong>
-                最终的落点在制度：中医能否被国家承认，直接决定它能否进入学校、医院和公共卫生体系。
+                学校能否招生、医生能否开业、药方能否进入公共卫生服务，最终都要经过制度入口，中医转型因此绕不开医政。
               </div>
             </article>
           </div>
@@ -1415,7 +1436,7 @@
       <section id="debate" class="debate">
         <div class="section-inner">
           <p class="section-kicker reveal">关键论争</p>
-          <h2 class=”reveal”>论争的焦点归结为一个根本问题：谁有资格定义何为合格的医学？</h2>
+          <h2 class="reveal">论争的焦点归结为一个根本问题：谁有资格定义何为合格的医学？</h2>
           <p class="section-note reveal">
             一方珍视千年积淀的临床经验与文化传承，一方坚持以实验验证和公共卫生标准作为医学的准入门槛。
           </p>
@@ -1444,7 +1465,7 @@
       <section class="exhibit">
         <div class="section-inner">
           <p class="section-kicker reveal">文本现场</p>
-          <h2 class=”reveal”>唐宗海的”中西汇通”，是近代中医在西学冲击下主动求变的一次重要尝试。</h2>
+          <h2 class="reveal">唐宗海的“中西汇通”，是近代中医在西学冲击下主动求变的一次重要尝试。</h2>
           <div class="exhibit-layout">
             <figure class="scan reveal">
               <img
@@ -1513,7 +1534,7 @@
               >
                 唐宗海《中西汇通医经精义》
               </a>
-              <span>”中西汇通”思路的重要文本，首屏与展品区所用扫描图来自公有领域。</span>
+              <span>“中西汇通”思路的重要文本，首屏与展品区所用扫描图来自公有领域。</span>
             </li>
             <li class="reveal">
               <a
