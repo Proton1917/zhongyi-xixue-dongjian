@@ -599,8 +599,8 @@
 
       .media-grid {
         display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: clamp(20px, 4vw, 42px);
+        grid-template-columns: 1fr;
+        gap: clamp(22px, 3vw, 34px);
         margin-top: 46px;
         align-items: start;
       }
@@ -614,13 +614,17 @@
 
       .video-frame {
         position: relative;
-        padding: 18px;
+        display: grid;
+        grid-template-columns: minmax(0, 1.42fr) minmax(260px, 0.58fr);
+        gap: clamp(18px, 3vw, 30px);
+        align-items: stretch;
+        padding: clamp(14px, 2vw, 22px);
       }
 
       .video-shell {
         position: relative;
         overflow: hidden;
-        aspect-ratio: 6 / 7;
+        aspect-ratio: 16 / 9;
         background:
           linear-gradient(rgba(95, 8, 8, 0.12), rgba(95, 8, 8, 0.12)),
           url("assets/republic-era-medicine-debate-poster.jpg") center / cover no-repeat,
@@ -637,26 +641,44 @@
 
       .video-caption,
       .media-card figcaption {
-        margin-top: 14px;
         color: var(--ink-soft);
         font-family: var(--hei);
         font-size: 13px;
         line-height: 1.65;
       }
 
+      .video-caption {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        padding: clamp(16px, 2.4vw, 26px);
+        border-left: 5px solid var(--red-700);
+        background: rgba(255, 250, 240, 0.62);
+        font-size: 15px;
+        line-height: 1.8;
+      }
+
+      .media-card figcaption {
+        flex: 1;
+        margin-top: 14px;
+      }
+
       .media-stack {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 16px;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+        align-items: stretch;
       }
 
       .media-card {
+        display: flex;
+        flex-direction: column;
         margin: 0;
         padding: 14px;
       }
 
       .media-card.wide {
-        grid-column: 1 / -1;
+        grid-column: auto;
       }
 
       .media-card img {
@@ -669,12 +691,13 @@
       }
 
       .media-card.portrait img {
-        aspect-ratio: 3 / 4;
+        aspect-ratio: 4 / 3;
         object-position: center top;
       }
 
       .archive-open {
         width: 100%;
+        margin-top: auto;
         color: var(--porcelain);
         border-color: transparent;
         background: var(--red-800);
@@ -1067,6 +1090,15 @@
         .media-grid,
         .modal-panel {
           grid-template-columns: 1fr;
+        }
+
+        .video-frame {
+          grid-template-columns: 1fr;
+        }
+
+        .video-caption {
+          border-top: 5px solid var(--red-700);
+          border-left: 0;
         }
 
         .timeline-grid,
